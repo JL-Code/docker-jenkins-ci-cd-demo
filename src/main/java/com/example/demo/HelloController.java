@@ -17,8 +17,8 @@ public class HelloController {
         return "你好，我来自 Docker";
     }
 
-    @GetMapping("/hello2")
-    public Object methodName2() {
-        return "我来自镜像覆盖输出";
-    }
+//    @GetMapping("/hello2")
+//    public Object methodName2() {
+//        return "我来自镜像覆盖输出";
+//    }
 }
