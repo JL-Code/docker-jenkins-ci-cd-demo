@@ -21,19 +21,14 @@ pipeline {
             }
         }
 
-        stage('build') {
+        stage('maven') {
             steps {
                 sh 'mvn clean package -Dmaven.test.skip'
             }
             post {
                 success {
-
+                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
                 }
-            }
-        }
-        stage('release') {
-            steps {
-               sh 'mvn '
             }
         }
     }
