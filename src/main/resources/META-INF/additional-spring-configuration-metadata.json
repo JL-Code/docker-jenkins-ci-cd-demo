@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "demo.config-value",
+      "type": "java.lang.String",
+      "description": "Description for demo.config-value."
+    }
+  ]
+}

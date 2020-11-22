@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,13 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    @Value("${demo.config-value}")
+    private String configValue;
+
     @GetMapping("/hello")
     public Object methodName() {
         return "你好，我来自 Docker";
     }
 
-//    @GetMapping("/hello2")
-//    public Object methodName2() {
-//        return "我来自镜像覆盖输出";
-//    }
+    @GetMapping("/config/info")
+    public Object getConfigInfo() {
+        return configValue;
+    }
 }
